@@ -17,13 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     @IBAction func goNext() {
         print("ButtonPressed!")
-        viewController?.replaceWindow(index: index)
         if (index == 0 || index == 1) {
             index += 1
             print("index:\(index)")
@@ -31,6 +26,7 @@ class ViewController: UIViewController {
             index = 0
             print("index:\(index)")
         }
+        viewController?.replaceWindow(index: index)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
