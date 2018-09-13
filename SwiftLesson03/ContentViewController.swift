@@ -37,8 +37,4 @@ class ContentViewController: UIViewController {
         self.addChildViewController(viewController)
         self.view.addSubview((viewController.view)!)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
