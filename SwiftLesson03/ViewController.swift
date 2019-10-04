@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var viewController:ContentViewController? = nil
-    var index: Int = 0
+    var contentViewController:ContentViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +18,12 @@ class ViewController: UIViewController {
 
     @IBAction func goNext() {
         print("ButtonPressed!")
-        if (index == 0 || index == 1) {
-            index += 1
-            print("index:\(index)")
-        } else {
-            index = 0
-            print("index:\(index)")
-        }
-        viewController?.replaceWindow(index: index)
+        contentViewController?.replaceWindow()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "content" {
-            viewController = (segue.destination as! ContentViewController)
+            contentViewController = (segue.destination as! ContentViewController)
         }
     }
 }

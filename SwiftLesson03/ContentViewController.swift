@@ -30,7 +30,14 @@ class ContentViewController: UIViewController {
         self.view.addSubview((vc.view)!)
     }
     
-    func replaceWindow(index:Int) {
+    func replaceWindow() {
+        if (index == 0 || index == 1) {
+            index += 1
+            print("index:\(index)")
+        } else {
+            index = 0
+            print("index:\(index)")
+        }
         self.removeFromParentViewController()
         let viewController = viewControllers[index]
         viewController.view.frame = self.view.frame
