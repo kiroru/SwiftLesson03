@@ -10,7 +10,7 @@ import UIKit
 
 class ContentViewController: UIViewController {
     
-    var viewControllers: [UIViewController] = NSMutableArray() as! [UIViewController]
+    var viewControllers = [UIViewController]()
     var index: Int = 0
 
     override func viewDidLoad() {
@@ -44,4 +44,5 @@ class ContentViewController: UIViewController {
         self.addChildViewController(viewController)
         self.view.addSubview((viewController.view)!)
     }
+    
 }
